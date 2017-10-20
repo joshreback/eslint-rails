@@ -7,7 +7,11 @@ module ESLintRails
     JAVASCRIPT_EXTENSIONS = %w(.js .jsx .es6)
 
     def initialize(file)
-      @file = normalize_infile(file)
+      @file = file
+
+      # NOTE: normalize_infile does inappropriate substitutions for the way
+      # this repo's assets are organized
+      # @file = normalize_infile(file)
     end
 
     def run
